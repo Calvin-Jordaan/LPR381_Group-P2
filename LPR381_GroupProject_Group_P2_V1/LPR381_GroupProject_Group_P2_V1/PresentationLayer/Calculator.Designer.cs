@@ -50,9 +50,10 @@
             // 
             // btn_import
             // 
-            this.btn_import.Location = new System.Drawing.Point(43, 268);
+            this.btn_import.Location = new System.Drawing.Point(48, 335);
+            this.btn_import.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_import.Name = "btn_import";
-            this.btn_import.Size = new System.Drawing.Size(267, 60);
+            this.btn_import.Size = new System.Drawing.Size(300, 75);
             this.btn_import.TabIndex = 0;
             this.btn_import.Text = "Import";
             this.btn_import.UseVisualStyleBackColor = true;
@@ -64,9 +65,11 @@
             this.groupBox1.Controls.Add(this.rb_BB_Napsack);
             this.groupBox1.Controls.Add(this.rb_BB_Simplex);
             this.groupBox1.Controls.Add(this.rb_PSorDS);
-            this.groupBox1.Location = new System.Drawing.Point(43, 81);
+            this.groupBox1.Location = new System.Drawing.Point(48, 101);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(267, 181);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(300, 226);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choose an algorithm:";
@@ -74,9 +77,10 @@
             // rb_CP
             // 
             this.rb_CP.AutoSize = true;
-            this.rb_CP.Location = new System.Drawing.Point(18, 141);
+            this.rb_CP.Location = new System.Drawing.Point(20, 176);
+            this.rb_CP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rb_CP.Name = "rb_CP";
-            this.rb_CP.Size = new System.Drawing.Size(106, 20);
+            this.rb_CP.Size = new System.Drawing.Size(129, 24);
             this.rb_CP.TabIndex = 5;
             this.rb_CP.TabStop = true;
             this.rb_CP.Text = "Cutting Plane";
@@ -85,9 +89,10 @@
             // rb_BB_Napsack
             // 
             this.rb_BB_Napsack.AutoSize = true;
-            this.rb_BB_Napsack.Location = new System.Drawing.Point(18, 101);
+            this.rb_BB_Napsack.Location = new System.Drawing.Point(20, 126);
+            this.rb_BB_Napsack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rb_BB_Napsack.Name = "rb_BB_Napsack";
-            this.rb_BB_Napsack.Size = new System.Drawing.Size(204, 20);
+            this.rb_BB_Napsack.Size = new System.Drawing.Size(243, 24);
             this.rb_BB_Napsack.TabIndex = 4;
             this.rb_BB_Napsack.TabStop = true;
             this.rb_BB_Napsack.Text = "Branch and Bound (Napsack)";
@@ -96,9 +101,10 @@
             // rb_BB_Simplex
             // 
             this.rb_BB_Simplex.AutoSize = true;
-            this.rb_BB_Simplex.Location = new System.Drawing.Point(18, 61);
+            this.rb_BB_Simplex.Location = new System.Drawing.Point(20, 76);
+            this.rb_BB_Simplex.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rb_BB_Simplex.Name = "rb_BB_Simplex";
-            this.rb_BB_Simplex.Size = new System.Drawing.Size(197, 20);
+            this.rb_BB_Simplex.Size = new System.Drawing.Size(236, 24);
             this.rb_BB_Simplex.TabIndex = 3;
             this.rb_BB_Simplex.TabStop = true;
             this.rb_BB_Simplex.Text = "Branch and Bound (Simplex)";
@@ -107,9 +113,10 @@
             // rb_PSorDS
             // 
             this.rb_PSorDS.AutoSize = true;
-            this.rb_PSorDS.Location = new System.Drawing.Point(18, 21);
+            this.rb_PSorDS.Location = new System.Drawing.Point(20, 26);
+            this.rb_PSorDS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rb_PSorDS.Name = "rb_PSorDS";
-            this.rb_PSorDS.Size = new System.Drawing.Size(206, 20);
+            this.rb_PSorDS.Size = new System.Drawing.Size(240, 24);
             this.rb_PSorDS.TabIndex = 2;
             this.rb_PSorDS.TabStop = true;
             this.rb_PSorDS.Text = "Primal Simplex / Dual Simplex";
@@ -117,58 +124,62 @@
             // 
             // txt_ObjectiveFunction
             // 
-            this.txt_ObjectiveFunction.Location = new System.Drawing.Point(336, 100);
+            this.txt_ObjectiveFunction.Location = new System.Drawing.Point(378, 125);
+            this.txt_ObjectiveFunction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ObjectiveFunction.Name = "txt_ObjectiveFunction";
-            this.txt_ObjectiveFunction.Size = new System.Drawing.Size(267, 22);
+            this.txt_ObjectiveFunction.Size = new System.Drawing.Size(300, 26);
             this.txt_ObjectiveFunction.TabIndex = 2;
             // 
             // txt_Constraint
             // 
-            this.txt_Constraint.Location = new System.Drawing.Point(336, 144);
+            this.txt_Constraint.Location = new System.Drawing.Point(378, 180);
+            this.txt_Constraint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Constraint.Multiline = true;
             this.txt_Constraint.Name = "txt_Constraint";
-            this.txt_Constraint.Size = new System.Drawing.Size(267, 71);
+            this.txt_Constraint.Size = new System.Drawing.Size(300, 88);
             this.txt_Constraint.TabIndex = 3;
             // 
             // txt_SignRestriction
             // 
-            this.txt_SignRestriction.Location = new System.Drawing.Point(336, 240);
+            this.txt_SignRestriction.Location = new System.Drawing.Point(378, 300);
+            this.txt_SignRestriction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_SignRestriction.Name = "txt_SignRestriction";
-            this.txt_SignRestriction.Size = new System.Drawing.Size(267, 22);
+            this.txt_SignRestriction.Size = new System.Drawing.Size(300, 26);
             this.txt_SignRestriction.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(333, 81);
+            this.label1.Location = new System.Drawing.Point(375, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(140, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Objective Function";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(333, 125);
+            this.label2.Location = new System.Drawing.Point(375, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Constraints:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(333, 221);
+            this.label3.Location = new System.Drawing.Point(375, 276);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.Size = new System.Drawing.Size(133, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Sign Restrictions:";
             // 
             // btn_Calc
             // 
-            this.btn_Calc.Location = new System.Drawing.Point(336, 268);
+            this.btn_Calc.Location = new System.Drawing.Point(378, 335);
+            this.btn_Calc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Calc.Name = "btn_Calc";
-            this.btn_Calc.Size = new System.Drawing.Size(267, 60);
+            this.btn_Calc.Size = new System.Drawing.Size(300, 75);
             this.btn_Calc.TabIndex = 8;
             this.btn_Calc.Text = "Calculate";
             this.btn_Calc.UseVisualStyleBackColor = true;
@@ -177,21 +188,22 @@
             // dgv_Tables
             // 
             this.dgv_Tables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Tables.Location = new System.Drawing.Point(43, 372);
+            this.dgv_Tables.Location = new System.Drawing.Point(48, 465);
+            this.dgv_Tables.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_Tables.Name = "dgv_Tables";
             this.dgv_Tables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgv_Tables.RowHeadersWidth = 51;
             this.dgv_Tables.RowTemplate.Height = 24;
-            this.dgv_Tables.Size = new System.Drawing.Size(900, 278);
+            this.dgv_Tables.Size = new System.Drawing.Size(1012, 348);
             this.dgv_Tables.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 331);
+            this.label4.Location = new System.Drawing.Point(40, 414);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 38);
+            this.label4.Size = new System.Drawing.Size(157, 46);
             this.label4.TabIndex = 10;
             this.label4.Text = "Output:";
             // 
@@ -199,17 +211,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(282, 9);
+            this.label5.Location = new System.Drawing.Point(317, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(444, 69);
+            this.label5.Size = new System.Drawing.Size(534, 82);
             this.label5.TabIndex = 11;
             this.label5.Text = "LPR Calculator";
             // 
             // Calculator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 703);
+            this.ClientSize = new System.Drawing.Size(1105, 879);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_Tables);
@@ -222,6 +234,7 @@
             this.Controls.Add(this.txt_ObjectiveFunction);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_import);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";

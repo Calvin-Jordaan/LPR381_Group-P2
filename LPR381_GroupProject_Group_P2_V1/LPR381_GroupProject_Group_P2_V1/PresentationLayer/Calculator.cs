@@ -60,6 +60,12 @@ namespace LPR381_GroupProject_Group_P2_V1
 
         private void btn_Calc_Click(object sender, EventArgs e)
         {
+            if(txt_ObjectiveFunction.Text == "" || txt_Constraint.Text == "" || txt_SignRestriction.Text == "")
+            {
+                MessageBox.Show("Make sure all fields have values", "Missing Information", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             BindingSource bs = new BindingSource();
             string objFunc = txt_ObjectiveFunction.Text.TrimEnd('\r', '\n');
             string constraints = txt_Constraint.Text.TrimEnd('\r', '\n');

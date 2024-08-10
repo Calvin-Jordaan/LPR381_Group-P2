@@ -10,3 +10,14 @@ C:\Users\calvi\Documents\Belgium Assignments\Bachelor of Computing Third Year\LP
 C:\Users\calvi\Documents\Belgium Assignments\Bachelor of Computing Third Year\LPR381\Group Project\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.pdb
 C:\Users\calvi\Documents\Belgium Assignments\Bachelor of Computing Third Year\LPR381\Group Project\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.Front_Page.resources
 C:\Users\calvi\Documents\Belgium Assignments\Bachelor of Computing Third Year\LPR381\Group Project\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.Calculator.resources
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\bin\Debug\LPR381_GroupProject_Group_P2_V1.exe.config
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\bin\Debug\LPR381_GroupProject_Group_P2_V1.exe
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\bin\Debug\LPR381_GroupProject_Group_P2_V1.pdb
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.csproj.AssemblyReference.cache
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.Calculator.resources
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.Front_Page.resources
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.Properties.Resources.resources
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.csproj.GenerateResource.cache
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.csproj.CoreCompileInputs.cache
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.exe
+C:\Users\Morne Bosch\Documents\4 Machine Learning 382\ProjGet\LPR381_Group-P2\LPR381_GroupProject_Group_P2_V1\LPR381_GroupProject_Group_P2_V1\obj\Debug\LPR381_GroupProject_Group_P2_V1.pdb

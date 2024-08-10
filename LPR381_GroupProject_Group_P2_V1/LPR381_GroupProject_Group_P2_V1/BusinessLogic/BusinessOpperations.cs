@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
@@ -138,7 +140,19 @@ namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
                         else if (j == (con_arr[0].Split(' ').Length - 2 + i))
                         {
                             // This is for the s and e variables
-                            canonical_arr[i, j] = 1;
+                            int lessThan = con.IndexOf('<');
+                            int greaterThan = con.IndexOf('>');
+
+                            if (lessThan != -1 && (greaterThan == -1 || lessThan < greaterThan))
+                            {
+                                canonical_arr[i, j] = 1;
+                                con = con.Remove(lessThan, 1);
+                            }
+                            else if (greaterThan != -1 && (lessThan == -1 || greaterThan < lessThan))
+                            {
+                                canonical_arr[i, j] = -1;
+                                con = con.Remove(greaterThan, 1);
+                            }
                         }
                         else if (j == columnLength - 1)
                         {

@@ -44,6 +44,7 @@
             this.dgv_Tables = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_Optimize = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Tables)).BeginInit();
             this.SuspendLayout();
@@ -217,11 +218,22 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "LPR Calculator";
             // 
+            // btn_Optimize
+            // 
+            this.btn_Optimize.Location = new System.Drawing.Point(698, 335);
+            this.btn_Optimize.Name = "btn_Optimize";
+            this.btn_Optimize.Size = new System.Drawing.Size(300, 75);
+            this.btn_Optimize.TabIndex = 12;
+            this.btn_Optimize.Text = "button1";
+            this.btn_Optimize.UseVisualStyleBackColor = true;
+            this.btn_Optimize.Click += new System.EventHandler(this.btn_Optimize_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 879);
+            this.Controls.Add(this.btn_Optimize);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv_Tables);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.DataGridView dgv_Tables;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_Optimize;
     }
 }

@@ -66,7 +66,6 @@ namespace LPR381_GroupProject_Group_P2_V1
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            BindingSource bs = new BindingSource();
             string objFunc = txt_ObjectiveFunction.Text.TrimEnd('\r', '\n');
             string constraints = txt_Constraint.Text.TrimEnd('\r', '\n');
             string signRes = txt_SignRestriction.Text.TrimEnd('\r', '\n');
@@ -76,7 +75,12 @@ namespace LPR381_GroupProject_Group_P2_V1
 
             var (canonical_table, table_row_count, table_column_count, func_type, var_count) = bo.GetCanonalTable(objFunc, constraints, bin_arr, signRes, binCount);
 
-            dgv_Tables.Rows.Clear();
+
+            dgv_Tables.DataSource = null;
+            if (dgv_Tables.Rows.Count > 0)
+            {
+                dgv_Tables.Rows.Clear();
+            }
 
             dgv_Tables.ColumnCount = table_column_count + 1;
 
@@ -148,6 +152,37 @@ namespace LPR381_GroupProject_Group_P2_V1
                 dgv_Tables.Rows.Add(row);
                 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable table = bo.OptimizeTable(dgv_Tables);
+
+            dgv_Tables.DataSource = null;
+            if (dgv_Tables.Rows.Count > 0)
+            {
+                dgv_Tables.Rows.Clear();
+                dgv_Tables.Columns.Clear();
+            }
+
+            dgv_Tables.DataSource = table;
+        }
+
+        private void btn_Optimize_Click(object sender, EventArgs e)
+        {
+            DataTable table = bo.OptimizeTable(dgv_Tables);
+            dgv_Tables.DataSource = null;
+            if (dgv_Tables.Rows.Count > 0)
+            {
+                dgv_Tables.Rows.Clear();
+                dgv_Tables.Columns.Clear();
+            }
+
+            // Clear existing rows and set the DataSource
+            dgv_Tables.DataSource = table;
+
+            bo.GetOptimalTable(dgv_Tables);
+
         }
     }
 }

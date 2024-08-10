@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
 {
@@ -198,8 +200,163 @@ namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
             return (canonical_arr, rowLength, columnLength, maxorMin_func, objFunc.Split(' ').Length - 1);
         }
 
-        public void GetOptimalTable()
-        { 
+        public void GetOptimalTable(DataGridView dgv)
+        {
+            bool hasNegativeValues = false;
+
+            for (int i = 1; i < dgv.Columns.Count - 1; i++)
+            {
+                // Get the Z-values to check for negatives
+                double cellValue = Convert.ToDouble(dgv.Rows[1].Cells[i].Value);
+
+                if (cellValue < 0)
+                {
+                    hasNegativeValues = true;
+                    break; // Exit loop early if a negative value is found
+                }
+            }
+
+            // If negative values are found, call optimizeTable
+            if (hasNegativeValues)
+            {
+                DataTable optimizedTable = OptimizeTable(dgv);
+                dgv.DataSource = optimizedTable;
+            }
+        }
+
+        public DataTable OptimizeTable(DataGridView dgv)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Add columns to the DataTable with empty headers
+            foreach (DataGridViewColumn col in dgv.Columns)
+            {
+                dataTable.Columns.Add(""); // Add column with empty header
+            }
+
+            // Add rows to the DataTable
+            foreach (DataGridViewRow newRow in dgv.Rows)
+            {
+                if (!newRow.IsNewRow) // Skip the new row placeholder
+                {
+                    DataRow dRow = dataTable.NewRow();
+                    foreach (DataGridViewCell cell in newRow.Cells)
+                    {
+                        dRow[cell.ColumnIndex] = cell.Value ?? DBNull.Value; // Handle null values
+                    }
+                    dataTable.Rows.Add(dRow);
+                }
+            }
+
+            // This will find the Pivot point each time
+            int RatioCol = -1;
+            double smallestValue = double.MaxValue; // first ratio will always be smaller that Max
+
+            DataGridViewRow row = dgv.Rows[1];
+            for (int i = 1; i < dgv.Columns.Count - 1; i++)
+            {
+                double cellValue = Convert.ToDouble(row.Cells[i].Value);
+
+                if (cellValue < smallestValue)
+                {
+                    smallestValue = cellValue;
+                    RatioCol = i;
+                }
+            }
+
+            // Finds smallest Ratio
+            int ratioRow = -1;
+            double ratio;
+            double smallestRatio = double.MaxValue; // first ratio will always be smaller that Max
+
+            for (int i = 2; i < dgv.Rows.Count - 1; i++)
+            {
+                row = dgv.Rows[i];
+
+                double rhsValue = Convert.ToDouble(row.Cells[dgv.Columns.Count - 1].Value);
+                double pivotColValue = Convert.ToDouble(row.Cells[RatioCol].Value);
+
+
+                if (pivotColValue != 0)
+                {
+                    ratio = rhsValue / pivotColValue;
+
+                    if (ratio > 0 && ratio < smallestRatio)
+                    {
+                        smallestRatio = ratio;
+                        ratioRow = i;
+                    }
+                }
+
+            }
+
+            // Start by completing next table pivot point
+
+            row = dgv.Rows[ratioRow];
+            double lockedDiv = Convert.ToDouble(row.Cells[RatioCol].Value);
+
+            for (int i = 1; i < dgv.Columns.Count; i++)
+            {
+                double cellValue = Convert.ToDouble(row.Cells[i].Value);
+
+                double newValue = cellValue / lockedDiv;
+                row.Cells[i].Value = newValue;
+            }
+
+            // Rebuild the DataTable to reflect changes
+            dataTable.Clear();
+            foreach (DataGridViewRow newRow in dgv.Rows)
+            {
+                if (!newRow.IsNewRow)
+                {
+                    DataRow dRow = dataTable.NewRow();
+                    foreach (DataGridViewCell cell in newRow.Cells)
+                    {
+                        dRow[cell.ColumnIndex] = cell.Value ?? DBNull.Value;
+                    }
+                    dataTable.Rows.Add(dRow);
+                }
+            }
+
+            // Do the calculation for each other Row
+            for (int i = 1; i < dgv.Rows.Count - 1; i++) // Loop through each row (starting from row 2)
+            {
+                row = dgv.Rows[i];
+
+                // Get the value in the RatioCol for the current row
+                double lockedColValue = Convert.ToDouble(dgv.Rows[i].Cells[RatioCol].Value);
+
+                for (int j = 1; j < dgv.Columns.Count; j++) // Loop through each column (starting from column 1)
+                {
+                    if (i!= ratioRow)
+                    {
+                        double currentValue = Convert.ToDouble(row.Cells[j].Value);
+
+                        // Get the value in the ratioRow for the current column
+                        double lockedRowValue = Convert.ToDouble(dgv.Rows[ratioRow].Cells[j].Value);
+
+                        double newValue = currentValue - (lockedRowValue * lockedColValue);
+                        row.Cells[j].Value = newValue;
+                    }
+                }
+            }
+
+            // Rebuild the DataTable to reflect changes
+            dataTable.Clear();
+            foreach (DataGridViewRow newRow in dgv.Rows)
+            {
+                if (!newRow.IsNewRow)
+                {
+                    DataRow dRow = dataTable.NewRow();
+                    foreach (DataGridViewCell cell in newRow.Cells)
+                    {
+                        dRow[cell.ColumnIndex] = cell.Value ?? DBNull.Value;
+                    }
+                    dataTable.Rows.Add(dRow);
+                }
+            }
+
+            return dataTable;
         }
 
         public string displayMulti(double[,] multi_arr, int rowLength)
@@ -217,8 +374,7 @@ namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
                 if (i != (rowLength - 1))
                 {
                     createdTable = createdTable + "\n";
-                }
-                
+                }              
             }
 
             return createdTable;

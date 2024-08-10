@@ -100,6 +100,7 @@ namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
             string[] con_arr = con.Split('\n');
             int rowLength = objFunc.Split('\n').Length + con.Split('\n').Length + binCount;
             int columnLength = (objFunc.Split(' ').Length - 1) + (con_arr.Length) + binCount + 1;
+            string manipulatedCon = con;
             Console.WriteLine("Objective function count: " + objFunc.Split('\n').Length);
             Console.WriteLine("Objective function count: " + con.Split('\n').Length);
 
@@ -139,7 +140,6 @@ namespace LPR381_GroupProject_Group_P2_V1.BusinessLogic
                         }
                         else if (j == (con_arr[0].Split(' ').Length - 2 + i))
                         {
-                            string manipulatedCon = con;
                             // This is for the s and e variables
                             int lessThan = manipulatedCon.IndexOf('<');
                             int greaterThan = manipulatedCon.IndexOf('>');
